@@ -2,7 +2,7 @@ package com.edu.OnlineGroceryDelivery.service;
 
 import java.util.List;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.GroceryItem;
+import com.edu.OnlineGroceryDelivery.entity.GroceryItem;
 
 public interface GroceryItemService {
 

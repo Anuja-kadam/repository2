@@ -1,12 +1,15 @@
-package com.edu.OnlineGroceryDelivery.controller.entity;
+package com.edu.OnlineGroceryDelivery.entity;
 
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -19,11 +22,13 @@ public class Customer {
 	
 
 	@Id
+	@GeneratedValue(generator="seq2", strategy=GenerationType.AUTO)
+	@SequenceGenerator(name= "seq2", initialValue=201)
 	private long id;
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String contactNo;
+	private long contactNo;
 	
 	@OneToMany(mappedBy="customer",cascade= CascadeType.ALL, fetch= FetchType.LAZY)
 	@JsonIgnoreProperties("customer")
@@ -57,14 +62,13 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getContactNo() {
+	public long getContactNo() {
 		return contactNo;
 	}
-	public void setContactNo(String contactNo) {
+	public void setContactNo(long contactNo) {
 		this.contactNo = contactNo;
 	}
-	
-	public Customer(long id, String firstName, String lastName, String email, String contactNo) {
+	public Customer(long id, String firstName, String lastName, String email, long contactNo) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -72,7 +76,6 @@ public class Customer {
 		this.email = email;
 		this.contactNo = contactNo;
 	}
-	
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -82,6 +85,7 @@ public class Customer {
 		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", contactNo=" + contactNo + "]";
 	}
+	
 	
 	
 

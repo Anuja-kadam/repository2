@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.GroceryItem;
+import com.edu.OnlineGroceryDelivery.entity.GroceryItem;
 import com.edu.OnlineGroceryDelivery.exception.ResourceNotFoundException;
 import com.edu.OnlineGroceryDelivery.repository.GroceryItemRepository;
-
+@Service
 public class GroceryItemServiceImpl implements GroceryItemService{
 	
 	@Autowired

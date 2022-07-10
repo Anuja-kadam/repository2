@@ -3,11 +3,13 @@ package com.edu.OnlineGroceryDelivery.repository;
 import java.util.List;
 import java.util.Optional;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository {
 
-	Customer save(Object address);
+import com.edu.OnlineGroceryDelivery.entity.Customer;
+
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
 
 	List<Customer> findAll();
 

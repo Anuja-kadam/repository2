@@ -1,10 +1,15 @@
-package com.edu.OnlineGroceryDelivery.controller.entity;
+package com.edu.OnlineGroceryDelivery.entity;
+
+import java.util.function.IntPredicate;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -14,6 +19,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Address {
 
 	@Id
+	@GeneratedValue(generator="seq1", strategy=GenerationType.AUTO)
+	@SequenceGenerator(name= "seq1", initialValue=101)
 	private long id;
 	private String city;
 	private String streetName;
@@ -22,10 +29,16 @@ public class Address {
 	@ManyToOne(fetch= FetchType.LAZY)
 	@JoinColumn(name= "custId")
 	@JsonIgnoreProperties("address")
-	private Customer customer;//102
+	private Customer customer;
 	
+	public Address(long id, String city, String streetName, long postalCode) {
+		super();
+		this.id = id;
+		this.city = city;
+		this.streetName = streetName;
+		this.postalCode = postalCode;
+	}
 	public long getId() {
-
 		return id;
 	}
 	public void setId(long id) {
@@ -49,13 +62,7 @@ public class Address {
 	public void setPostalCode(long postalCode) {
 		this.postalCode = postalCode;
 	}
-	public Address(long id, String city, String streetName, long postalCode) {
-		super();
-		this.id = id;
-		this.city = city;
-		this.streetName = streetName;
-		this.postalCode = postalCode;
-	}
+	
 	public Address() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -65,6 +72,9 @@ public class Address {
 		return "Address [id=" + id + ", city=" + city + ", streetName=" + streetName + ", postalCode=" + postalCode
 				+ "]";
 	}
+	 
+	 
+	
+	
 }
 	
-		

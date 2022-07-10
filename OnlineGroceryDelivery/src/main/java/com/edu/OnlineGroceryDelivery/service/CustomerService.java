@@ -2,11 +2,11 @@ package com.edu.OnlineGroceryDelivery.service;
 
 import java.util.List;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Customer;
+import com.edu.OnlineGroceryDelivery.entity.Customer;
 
 public interface CustomerService {
 
-	Customer saveCustomer(Customer customer);
+
 
 	
 
@@ -23,5 +23,13 @@ public interface CustomerService {
 
 
 	String deleteCustomer(long id);
+
+
+
+	Customer saveCustomer(Customer customer);
+
+
+
+
 
 }

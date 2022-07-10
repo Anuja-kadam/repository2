@@ -1,18 +1,26 @@
-package com.edu.OnlineGroceryDelivery.controller.entity;
+package com.edu.OnlineGroceryDelivery.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name ="groceryTbl")
 public class GroceryItem {
+	
 	@Id
+	@GeneratedValue(generator="seq3", strategy=GenerationType.AUTO)
+	@SequenceGenerator(name= "seq3", initialValue=301)
 	private long productId;
 	private String productCategory;
 	private String productName;
 	private long productPrice;
 	private String qualityOfProduct;
+	private long totalNoOfProduct;
+	
 	public long getProductId() {
 		return productId;
 	}
@@ -43,16 +51,22 @@ public class GroceryItem {
 	public void setQualityOfProduct(String qualityOfProduct) {
 		this.qualityOfProduct = qualityOfProduct;
 	}
+	public long getTotalNoOfProduct() {
+		return totalNoOfProduct;
+	}
+	public void setTotalNoOfProduct(long totalNoOfProduct) {
+		this.totalNoOfProduct = totalNoOfProduct;
+	}
 	public GroceryItem(long productId, String productCategory, String productName, long productPrice,
-			String qualityOfProduct) {
+			String qualityOfProduct, long totalNoOfProduct) {
 		super();
 		this.productId = productId;
 		this.productCategory = productCategory;
 		this.productName = productName;
 		this.productPrice = productPrice;
 		this.qualityOfProduct = qualityOfProduct;
+		this.totalNoOfProduct = totalNoOfProduct;
 	}
-	
 	public GroceryItem() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -60,10 +74,9 @@ public class GroceryItem {
 	@Override
 	public String toString() {
 		return "GroceryItem [productId=" + productId + ", productCategory=" + productCategory + ", productName="
-				+ productName + ", productPrice=" + productPrice + ", qualityOfProduct=" + qualityOfProduct + "]";
+				+ productName + ", productPrice=" + productPrice + ", qualityOfProduct=" + qualityOfProduct
+				+ ", totalNoOfProduct=" + totalNoOfProduct + "]";
 	}
-	
 }
 	
 	
-

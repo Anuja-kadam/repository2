@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.GroceryItem;
+import com.edu.OnlineGroceryDelivery.entity.GroceryItem;
 import com.edu.OnlineGroceryDelivery.service.GroceryItemService;
 
 @RestController

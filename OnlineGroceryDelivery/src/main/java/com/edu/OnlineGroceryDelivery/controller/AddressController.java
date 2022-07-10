@@ -14,15 +14,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Address;
+import com.edu.OnlineGroceryDelivery.entity.Address;
 import com.edu.OnlineGroceryDelivery.service.AddressService;
+
 
 @RestController
 @RequestMapping("api/address")
 
 public class AddressController {
 	
-	@Autowired 
+	@Autowired
 	AddressService addressService;
 	
 	@GetMapping

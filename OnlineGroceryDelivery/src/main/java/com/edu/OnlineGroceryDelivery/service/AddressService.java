@@ -3,7 +3,8 @@ package com.edu.OnlineGroceryDelivery.service;
 import java.util.List;
 
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Address;
+
+import com.edu.OnlineGroceryDelivery.entity.Address;
 
 public interface AddressService{
 

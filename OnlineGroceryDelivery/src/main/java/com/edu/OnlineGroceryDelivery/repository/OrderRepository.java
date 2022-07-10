@@ -3,9 +3,12 @@ package com.edu.OnlineGroceryDelivery.repository;
 import java.util.List;
 import java.util.Optional;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderRepository {
+
+import com.edu.OnlineGroceryDelivery.entity.Order;
+
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
 	List<Order> findAll();
 

@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Customer;
+import com.edu.OnlineGroceryDelivery.entity.Customer;
 import com.edu.OnlineGroceryDelivery.exception.ResourceNotFoundException;
 import com.edu.OnlineGroceryDelivery.repository.CustomerRepository;
 
-
+@Service
 public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired

@@ -3,9 +3,12 @@ package com.edu.OnlineGroceryDelivery.repository;
 import java.util.List;
 import java.util.Optional;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.GroceryItem;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface GroceryItemRepository {
+
+import com.edu.OnlineGroceryDelivery.entity.GroceryItem;
+
+public interface GroceryItemRepository extends JpaRepository<GroceryItem, Long>{
 
 	List<GroceryItem> findAll();
 

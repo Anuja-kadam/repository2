@@ -3,10 +3,12 @@ package com.edu.OnlineGroceryDelivery.repository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.edu.OnlineGroceryDelivery.controller.entity.Address;
 
-public interface AddressRepository {
+import com.edu.OnlineGroceryDelivery.entity.Address;
+
+public interface AddressRepository extends JpaRepository<Address, Long> {
 
 	List<Address> findAll();
 
@@ -15,6 +17,12 @@ public interface AddressRepository {
 	Optional<Address> findById(long id);
 
 	void deleteById(long id);
+
+
+
+	
+
+	
 
 	
 	
